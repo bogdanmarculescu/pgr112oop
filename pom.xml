@@ -12,6 +12,7 @@
 
     <modules>
         <module>exercises</module>
+        <module>lessons</module>
     </modules>
 
     <properties>
