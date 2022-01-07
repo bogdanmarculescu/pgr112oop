@@ -66,11 +66,10 @@ public class BookSolutionTest {
     @Test
     public void testExtraTask2all(){
         BookRegister register = initializeBookRegister();
-        ArrayList<BookSolution> all = register.allRegisteredBooks();
+        BookSolution[] all = register.allRegisteredBooks();
 
-        assertEquals(5, all.size());
-        assertEquals("Dune", all.get(0).getTitle());
-        assertEquals("Terry Pratchett", all.get(4).getAuthor());
+        assertEquals("Dune", all[0].getTitle());
+        assertEquals("Terry Pratchett", all[4].getAuthor());
 
         /*
         Note: you can include many more tests here, checking that each book:
@@ -82,9 +81,9 @@ public class BookSolutionTest {
     @Test
     public void testExtraTask2genre(){
         BookRegister register = initializeBookRegister();
-        ArrayList<BookSolution> all = register.booksInGenre(Genre.FANTASY);
+        BookSolution[] all = register.booksInGenre(Genre.FANTASY);
 
-        assertEquals(4, all.size());
+        assertEquals(Genre.FANTASY, all[0].getGenre());
         /*
         Note: again, many more checks are possible here.
          */
@@ -93,9 +92,9 @@ public class BookSolutionTest {
     @Test
     public void testExtraTask2author(){
         BookRegister register = initializeBookRegister();
-        ArrayList<BookSolution> all = register.booksByAuthor("J.R.R. Tolkien");
+        BookSolution[] all = register.booksByAuthor("J.R.R. Tolkien");
 
-        assertEquals(3, all.size());
+        assertEquals("J.R.R. Tolkien", all[0].getAuthor());
         /*
         Note: again, many more checks are possible here.
          */

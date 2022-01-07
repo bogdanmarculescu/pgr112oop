@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class BookRegister {
 
-
-    private ArrayList<BookSolution> books;
+    private BookSolution[] books;
+    //private ArrayList<BookSolution> books;
     private int numberOfBooks;
 
     public BookRegister(){
-        this.books = new ArrayList<BookSolution>(20);
+        this.books = new BookSolution[20];
         this.numberOfBooks = 0;
     }
 
@@ -19,36 +19,42 @@ public class BookRegister {
 
     public boolean addBook(BookSolution book){
         if(numberOfBooks <= 19){
-            books.add(book);
+            books[numberOfBooks] = book;
             numberOfBooks++;
             return true;
         }
         return false;
     }
 
-    public ArrayList<BookSolution> allRegisteredBooks(){
-        ArrayList<BookSolution> result = new ArrayList<BookSolution>();
+    public BookSolution[] allRegisteredBooks(){
+        BookSolution[] result = new BookSolution[20];
+        int index = 0;
         for(BookSolution b : this.books){
-            result.add(b);
+            result[index] = b;
+            index++;
         }
         return result;
     }
 
-    public ArrayList<BookSolution> booksInGenre(Genre genre){
-        ArrayList<BookSolution> result = new ArrayList<BookSolution>();
-        for(BookSolution b : this.books){
-            if(b.getGenre()==genre) {
-                result.add(b);
+    public BookSolution[] booksInGenre(Genre genre){
+        BookSolution[] result = new BookSolution[20];
+        int index = 0;
+        for(int i = 0; i < numberOfBooks; i++){
+            if(books[i].getGenre()==genre) {
+                result[index] = books[i];
+                index++;
             }
         }
         return result;
     }
 
-    public ArrayList<BookSolution> booksByAuthor(String author){
-        ArrayList<BookSolution> result = new ArrayList<BookSolution>();
-        for(BookSolution b : this.books){
-            if(b.getAuthor().equalsIgnoreCase(author)) {
-                result.add(b);
+    public BookSolution[] booksByAuthor(String author){
+        BookSolution[] result = new BookSolution[20];
+        int index = 0;
+        for(int i = 0; i < numberOfBooks; i++){
+            if(books[i].getAuthor().equalsIgnoreCase(author)) {
+                result[index] = books[i];
+                index++;
             }
         }
         return result;
@@ -57,9 +63,9 @@ public class BookRegister {
     public ArrayList<BookSolution> booksWithReadingTimeLessThan(int minutes){
         ArrayList<BookSolution> result = new ArrayList<BookSolution>();
 
-        for(BookSolution book : books){
-            if(book.readingTime() <= minutes){
-                result.add(book);
+        for(int i = 0; i < numberOfBooks; i++){
+            if(books[i].readingTime() <= minutes){
+                result.add(books[i]);
             }
         }
         return result;
