@@ -13,13 +13,14 @@
     <modules>
         <module>exercises</module>
         <module>lessons</module>
+        <module>solutions</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <version.java>11</version.java>
+        <version.java>14</version.java>
         <version.junit.jupiter>5.4.2</version.junit.jupiter>
     </properties>
 
