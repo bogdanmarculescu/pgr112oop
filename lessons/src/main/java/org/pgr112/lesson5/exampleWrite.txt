@@ -1,0 +1,3 @@
+We've learned loops
+We've learned objects
+and now we know about exceptions and reading/writing!

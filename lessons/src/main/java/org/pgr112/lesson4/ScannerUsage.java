@@ -22,7 +22,20 @@ public class ScannerUsage {
 
         Scanner input = new Scanner(System.in);
 
-        int choice = input.nextInt();
+        //int choice = input.nextInt();
+
+        // Input sanitizing
+
+        String userInput = input.next();
+
+        int choice = -1;
+
+        try {
+            choice = Integer.parseInt(userInput);
+        }
+        catch (NumberFormatException exception){
+            System.out.println("No, that's not what I meant! Try Again!");
+        }
 
         while(choice!=3){
             switch (choice){
