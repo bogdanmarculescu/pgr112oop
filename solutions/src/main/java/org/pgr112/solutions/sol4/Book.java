@@ -7,6 +7,7 @@ public class Book {
     private String author;
     private int numberOfpages = 1;
     private Genre genre;
+    private String isbn;
     /*
     This is one of the alternatives to an array: the object ArrayList
      */
@@ -82,5 +83,13 @@ public class Book {
             sum+= ch.getReadingTime();
         }
         return sum;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }

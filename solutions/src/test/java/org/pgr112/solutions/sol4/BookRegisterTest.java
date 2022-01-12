@@ -134,5 +134,10 @@ public class BookRegisterTest {
 
     }
 
+    @Test
+    public void testRemove(){
+
+    }
+
 
 }

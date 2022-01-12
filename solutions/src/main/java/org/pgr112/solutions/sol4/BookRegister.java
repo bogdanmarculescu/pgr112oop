@@ -65,4 +65,19 @@ public class BookRegister {
         return result;
     }
 
+    public void removeBook(Book book){
+        if(books.contains(book)){
+            books.remove(book);
+        }
+    }
+
+    public void removeBookByISBN(String isbn){
+        for(Book book : books){
+            if(book.getIsbn().equalsIgnoreCase(isbn)){
+                books.remove(book);
+            }
+        }
+
+    }
+
 }
