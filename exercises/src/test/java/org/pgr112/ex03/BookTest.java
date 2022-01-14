@@ -1,4 +1,4 @@
-package org.pgr112.ex3;
+package org.pgr112.ex03;
 
 import org.junit.jupiter.api.Test;
 
