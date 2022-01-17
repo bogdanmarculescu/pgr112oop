@@ -4,7 +4,6 @@ public class MiddleClass extends ParentClass{
     protected String stringInMiddleClass;
 
     public MiddleClass() {
-        super();
         this.stringInMiddleClass = "Some dummy middle class value";
     }
 
@@ -27,9 +26,21 @@ public class MiddleClass extends ParentClass{
     }
 
     @Override
+    public void fantasticMethod() {
+        super.fantasticMethod();
+        System.out.println("But the Middle Class has provided it's own bit of personalization");
+    }
+
+    @Override
     public void printState(){
         super.printState();
         System.out.println("stringInMiddleClass:"+stringInMiddleClass);
+    }
+
+    @Override
+    public MiddleClass duplicateObject(){
+        MiddleClass result = new MiddleClass(this.stringInParentClass, this.stringInMiddleClass);
+        return result;
     }
 
 }

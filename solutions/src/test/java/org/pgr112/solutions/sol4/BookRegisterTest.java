@@ -135,8 +135,15 @@ public class BookRegisterTest {
     }
 
     @Test
-    public void testRemove(){
+    public void testAddition2(){
+        BookRegister br = initializeBookRegister();
 
+        int before = br.getNumberOfBooks();
+
+        Book b = new Book("test", "test", 5);
+        br.addBook(b);
+
+        assertEquals(before + 1, br.getNumberOfBooks());
     }
 
 

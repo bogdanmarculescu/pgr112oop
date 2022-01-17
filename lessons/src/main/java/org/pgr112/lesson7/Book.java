@@ -49,7 +49,7 @@ public class Book {
         System.out.println("ISBN:" + isbn + ", Title:" + title + ", Author:" + author
                 + ", NrOfPages:"+numberOfPages);
     }
-/*
+
     @Override
     public String toString() {
         return "Book{" +
@@ -60,5 +60,5 @@ public class Book {
                 '}';
     }
 
- */
+
 }

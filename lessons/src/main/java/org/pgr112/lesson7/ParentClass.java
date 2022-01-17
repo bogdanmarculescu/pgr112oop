@@ -1,5 +1,7 @@
 package org.pgr112.lesson7;
 
+import javax.naming.ldap.PagedResultsControl;
+
 public class ParentClass {
     protected String stringInParentClass;
 
@@ -27,6 +29,15 @@ public class ParentClass {
     public void printState(){
         System.out.println("---------------");
         System.out.println("stringInParentClass:"+stringInParentClass);
+    }
+
+    public ParentClass duplicateObject(){
+        ParentClass result = new ParentClass(this.stringInParentClass);
+        return result;
+    }
+
+    public boolean equals(ParentClass o){
+        return this.stringInParentClass.equalsIgnoreCase(o.stringInParentClass);
     }
 
 }
