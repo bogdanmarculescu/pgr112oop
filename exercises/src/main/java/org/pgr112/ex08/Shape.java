@@ -2,7 +2,7 @@ package org.pgr112.ex08;
 
 import java.awt.Color;
 
-public class Shape {
+public abstract class Shape {
     private Color color;
     private boolean isFilled;
 
@@ -36,4 +36,8 @@ public class Shape {
     public void setFilled(boolean filled) {
         isFilled = filled;
     }
+
+    public abstract double getArea();
+
+    public abstract double getPerimeter();
 }
