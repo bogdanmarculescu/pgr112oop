@@ -14,11 +14,19 @@ public class Main {
         capitalCities.put("Germany", "Berlin");
         capitalCities.put("Norway", "Oslo");
         capitalCities.put("USA", "Washington DC");
+        capitalCities.put("Netherlands", "Amsterdam");
+        capitalCities.put("Netherlands", "Hague");
         System.out.println(capitalCities);
+
+        System.out.println("-------");
+
         for (Map.Entry<String, String> entry :
                 capitalCities.entrySet()) {
             System.out.println(entry.getKey());
             System.out.println(entry.getValue());
         }
+
+        capitalCities.get("Netherlands");
+
     }
 }
