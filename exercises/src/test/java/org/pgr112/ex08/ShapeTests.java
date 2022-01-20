@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class ShapeTests {
 
     @Test
-    public void newTest(){
+    void newTest(){
         HashMap<String, Shape> myMap = new HashMap<>();
 
         for(Shape shape : myMap.values()){
