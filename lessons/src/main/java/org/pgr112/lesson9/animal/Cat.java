@@ -3,12 +3,12 @@ package org.pgr112.lesson9.animal;
 public class Cat implements Animal, Pet{
     @Override
     public void animalSound() {
-
+        System.out.println("It's mjau, isn't it? you want me to say mjau.");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("ZZZzzzZZZzz");
     }
 
     @Override
