@@ -1,4 +1,4 @@
-package org.pgr112.ex10;
+package org.pgr112.ex11;
 
 public class Program {
 
