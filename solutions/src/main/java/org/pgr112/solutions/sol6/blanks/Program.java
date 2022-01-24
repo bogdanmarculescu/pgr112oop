@@ -102,7 +102,7 @@ public class Program {
 
     public void story(){
         String sourceFile = "solutions/src/main/resources/sol06/story.txt";
-        String now = LocalDate.now().toString();
+        String now = LocalDate.now().toString() + "-" + System.currentTimeMillis();
         String destinationFile = "solutions/src/main/resources/sol06/story" + now + ".txt";
 
         completeStory(sourceFile, adjectives, destinationFile);
