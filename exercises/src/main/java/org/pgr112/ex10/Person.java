@@ -1,4 +1,4 @@
-package org.pgr112.ex11;
+package org.pgr112.ex10;
 
 public class Person {
     private int age;
