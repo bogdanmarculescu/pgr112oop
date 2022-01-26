@@ -1,4 +1,4 @@
-package org.pgr112.lesson10;
+package org.pgr112.lesson10.animals;
 
 public class Cat extends Animal {
 

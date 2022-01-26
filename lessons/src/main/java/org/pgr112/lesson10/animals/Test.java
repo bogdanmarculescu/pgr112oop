@@ -1,19 +1,13 @@
-package org.pgr112.lesson10;
-
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+package org.pgr112.lesson10.animals;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Optional;
-import java.util.Set;
 
-public class AnimalsTest {
+
+public class Test {
     private HashSet<Animal> animals;
 
-    @BeforeEach
-    public void initTest() {
+    public Test() {
         animals = new HashSet<>();
         initHashSet();
     }
@@ -26,7 +20,6 @@ public class AnimalsTest {
         animals.add(new Cat(5, "Kitty"));
     }
 
-    @Test
     public void doMagic() {
         boolean isEmpty = animals.isEmpty();
         System.out.println("HashSet is empty:" + isEmpty);
@@ -34,17 +27,6 @@ public class AnimalsTest {
         boolean petterRemoved = animals.remove(new Pig(1, "Petter"));
         System.out.println("Petter removed:");
         System.out.println(petterRemoved);
-    }
-
-    @Test
-    public void testPresence() {
-        org.pgr112.lesson10.Test test = new org.pgr112.lesson10.Test();
-        test.doMagic();
-        Optional<Animal> a = test.getAnimal(4);
-        if(a.isPresent()){
-            System.out.println("Found animal with id = 4:"+a.get().getName());
-        }
-
     }
 
     private void printAllAnimals() {
