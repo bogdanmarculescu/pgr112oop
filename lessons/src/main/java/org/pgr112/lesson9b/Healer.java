@@ -1,4 +1,4 @@
-package org.pgr112.lesson10;
+package org.pgr112.lesson9b;
 
 class Healer{
     private String heal = "Restores for 100hp";
