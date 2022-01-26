@@ -1,0 +1,66 @@
+package org.pgr112.lesson10;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Optional;
+import java.util.Set;
+
+
+public class Test {
+    private HashSet<Animal> animals;
+
+    public Test() {
+        animals = new HashSet<>();
+        initHashSet();
+    }
+
+    private void initHashSet() {
+        animals.add(new Pig(1, "Petter"));
+        animals.add(new Pig(2, "Jens"));
+        animals.add(new Pig(3, "Harald"));
+        animals.add(new Cat(4, "Mia"));
+        animals.add(new Cat(5, "Kitty"));
+    }
+
+    public void doMagic() {
+        boolean isEmpty = animals.isEmpty();
+        System.out.println("HashSet is empty:" + isEmpty);
+        printAllAnimals();
+        boolean petterRemoved = animals.remove(new Pig(1, "Petter"));
+        System.out.println("Petter removed:");
+        System.out.println(petterRemoved);
+    }
+
+    private void printAllAnimals() {
+        for (Animal a :
+                animals) {
+            System.out.println(a);
+        }
+    }
+
+    public Optional<Animal> getAnimal(int id){
+        for (Animal a :
+                animals) {
+            if(a.getId()==id){
+                return Optional.of(a);
+            }
+        }
+        return Optional.empty();
+    }
+
+    /**
+     * Simply adding length of two strings
+     * @param s1 string 1
+     * @param s2 string 2
+     * @return sum length of two strings
+     *
+     * @throws IllegalArgumentException if one or more strings are null
+     */
+    public int sumOfTwoStrings(String s1, String s2){
+        if(s1==null||s2==null){
+            throw new IllegalArgumentException("Expecting non-null values. Null found.");
+        }
+        return s1.length() + s2.length();
+    }
+
+}
