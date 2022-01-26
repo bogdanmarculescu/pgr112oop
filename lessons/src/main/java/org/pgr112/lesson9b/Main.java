@@ -1,10 +1,9 @@
-package org.pgr112.lesson10;
+package org.pgr112.lesson9b;
 
 import org.pgr112.lesson8.shapes.AbstractShape;
 import org.pgr112.lesson8.shapes.Circle;
 import org.pgr112.lesson8.shapes.Rectangle;
 import org.pgr112.lesson8.shapes.Square;
-import org.pgr112.solutions.sol7.EquilateralTriangle;
 
 import java.awt.*;
 import java.util.HashMap;
