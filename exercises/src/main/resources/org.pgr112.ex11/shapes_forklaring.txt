@@ -1,0 +1,77 @@
+Circle <- type figur
+2 <- radius
+23 < - r-fargen i fargens rgb
+23 < - g-fargen i fargens rgb
+23 < - b-fargen i fargens rgb
+true <- filled
+-2.0 <- x-posisjon for senter av sirkelen
+-2.0 <- y-posisjon for senter av sirkelen
+Rectangle
+4.0 <- bredde
+1.0 <- lengde
+120
+120
+120
+true
+2.0 <- x-posisjon for øvre venstre hjørne
+3.0 <- y-posisjon for øvre venstre hjørne
+6.0 <- x-posisjon for nedre høyre hjørne
+2.0 <- y-posisjon for nedre høyre hjørne
+Square
+5.0<- lengde på side i kvadratet
+40
+40
+40
+true
+10.0
+10.0
+15.0
+5.0
+Square
+1.0
+240
+240
+240
+true
+1.0
+2.0
+2.0
+1.0
+Circle
+5
+155
+155
+155
+true
+1.0
+1.0
+Circle
+2
+255
+255
+255
+false
+12.0
+13.0
+Rectangle
+2.0
+3.0
+220
+220
+220
+true
+2.0
+3.0
+4.0
+0.0
+Rectangle
+12.0
+13.0
+23
+23
+23
+true
+2.0
+3.0
+3.0
+4.0
