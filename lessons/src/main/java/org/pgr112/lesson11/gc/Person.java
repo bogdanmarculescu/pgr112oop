@@ -1,5 +1,7 @@
 package org.pgr112.lesson11.gc;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     public Person(String name){
@@ -19,5 +21,10 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(name);
     }
 }

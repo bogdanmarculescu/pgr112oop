@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Program {
     public BookRegister register;
+    public final String DEFAULT_SOURCE_FILE = "solutions/src/main/resources/sol06/bok.txt";
 
     public Program(){
         this.register = new BookRegister();
@@ -214,7 +215,8 @@ public class Program {
     }
 
     public ArrayList<Book> readDefaultBooks(){
-        return readBooks("solutions/src/main/resources/sol06/bok.txt");
+        //return readBooks("solutions/src/main/resources/sol06/bok.txt");
+        return readBooks(DEFAULT_SOURCE_FILE);
     }
 
     public void writeBooksDefault(){
@@ -222,6 +224,7 @@ public class Program {
         String destinationFile = "solutions/src/main/resources/sol06/books" + now + ".txt";
 
         writeBooks(destinationFile, register);
+        //writeBooks(DEFAULT_SOURCE_FILE, register);
     }
 
     public void writeBooks(String fileName, BookRegister books){

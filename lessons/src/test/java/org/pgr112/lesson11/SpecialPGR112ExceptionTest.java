@@ -1,6 +1,7 @@
 package org.pgr112.lesson11;
 
 import org.junit.jupiter.api.Test;
+import org.pgr112.lesson11.gc.Person;
 import org.pgr112.lesson11.gc.SpecialPGR112Exception;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
