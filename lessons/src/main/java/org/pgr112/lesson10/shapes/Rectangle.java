@@ -22,7 +22,7 @@ public class Rectangle extends Shape {
     }
 
     public double getArea(){
-        System.out.println("this is the rectanble implementation");
+        System.out.println("this is the rectangle implementation");
         return this.width*this.length;
     }
 
