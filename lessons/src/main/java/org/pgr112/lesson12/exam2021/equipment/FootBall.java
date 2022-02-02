@@ -8,7 +8,7 @@ public class FootBall extends Ball{
         super(id);
     }
 
-    public String getTYPE() {
+    public String getType() {
         return TYPE;
     }
 }

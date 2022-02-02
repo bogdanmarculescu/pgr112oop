@@ -7,7 +7,7 @@ public class VolleyBall extends Ball{
         super(id);
     }
 
-    public String getTYPE() {
+    public String getType() {
         return TYPE;
     }
 }

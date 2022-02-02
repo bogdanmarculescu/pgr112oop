@@ -14,9 +14,21 @@ public class EquipmentReader {
     private final String DEFAULT_FILE = "lessons/src/main/resources/lesson12/equipment.txt";
     // this will be the class that reads the information from file.
 
+    /***
+     * This method reads from the default file
+     * @return - the HashMap of equipment in the file
+     */
+    public HashMap<Integer, Equipment> readFromFile(){
+        return readFromFile(DEFAULT_FILE);
+    }
+
+    /***
+     * This method reads from a given file
+     * @param fileName - describes the file that we will read from
+     * @return - the HashMap of equipment in the file
+     */
     public HashMap<Integer, Equipment> readFromFile(String fileName) {
         // this is the method that will read from file
-
         HashMap<Integer, Equipment> result = new HashMap<>();
 
         try {
@@ -45,6 +57,8 @@ public class EquipmentReader {
                         boolean bAir = Boolean.parseBoolean(sAir);
 
                         Ball b1 = Ball.chooseAppropriateBall(iId, ballType);
+
+                        // at this point, b1 only has a type and an id.
                         b1.setLocation(location); // inherited from Equipment
                         b1.setReplace(bReplacement); // inherited from Equipment
                         b1.setHasAir(bAir);

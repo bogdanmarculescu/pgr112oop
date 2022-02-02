@@ -1,5 +1,7 @@
 package org.pgr112.lesson12.exam2021.equipment;
 
+import java.util.Locale;
+
 public abstract class Ball extends Equipment{
 
     private boolean hasAir;
@@ -28,16 +30,26 @@ public abstract class Ball extends Equipment{
      * but it will not be as easy to extend further down the line.
      */
     public static Ball chooseAppropriateBall(int id, String type){
-        switch (type){
-            case "Football" -> {
+        String typeNoCase = type.toLowerCase();
+        switch (typeNoCase){
+            case "football" -> {
                 return new FootBall(id);
             }
-            case "Volleyball" -> {
+            case "volleyball" -> {
                 return new VolleyBall(id);
             }
+            case "handball" -> {
+                return new HandBall(id);
+            }
+            case "basketball" -> {
+                return new BasketBall(id);
+            }
             default -> {
-                return null;
+                //return null;
+                throw new IllegalArgumentException("I do not support type: " + type);
             }
         }
     }
+
+    public abstract String getType();
 }
