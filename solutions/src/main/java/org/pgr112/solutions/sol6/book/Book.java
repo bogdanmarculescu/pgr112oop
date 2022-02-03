@@ -10,6 +10,7 @@ public class Book {
     private String isbn;
 
 
+    /*
     public Book(String title, String author){
         this.title = title;
         this.author = author;
@@ -23,10 +24,13 @@ public class Book {
         this.genre = genre;
     }
 
-    public Book(){
+     */
+
+    public Book(String isbn){
         this.title = "";
         this.author = "";
         this.genre = Genre.OTHER;
+        this.isbn = isbn;
     }
 
     public String printBook(){
@@ -59,10 +63,6 @@ public class Book {
 
     public String getIsbn() {
         return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
 
     public int getPages() {
