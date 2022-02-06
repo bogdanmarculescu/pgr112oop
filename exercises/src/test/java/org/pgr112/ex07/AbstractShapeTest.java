@@ -6,7 +6,7 @@ import java.awt.Color;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AbstractShapeTest {
+abstract class AbstractShapeTest {
 
     private AbstractShape getShapeInstance(){
         return new Shape();

@@ -10,15 +10,17 @@ public class Shape extends AbstractShape {
 
     public Shape(Color color, boolean filled){
         super();
+        this.color = color;
+        this.isFilled = filled;
     }
 
     @Override
     public boolean isFilled() {
-        return false;
+        return this.isFilled;
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return this.color;
     }
 }

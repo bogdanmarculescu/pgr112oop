@@ -57,8 +57,14 @@ public class ShapesTest {
     @Test
     public void testInputValidation(){
 
-        Circle c1 = new Circle(-42.0);
+        // An example of asserting an exception is thrown
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Circle c1 = new Circle(-42.0);
+        });
 
-        assertTrue(c1.getRadius() >= 0);
+        String expectedMessage = "guv";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 }

@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ShapeTest {
+public abstract class ShapeTest {
 
     @Test
     public void testShapeExample(){

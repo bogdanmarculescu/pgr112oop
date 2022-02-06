@@ -54,7 +54,7 @@ public class Main {
     }
 
     public Person varExample(){
-        var p1 = new Person("Variable person");
+        Person p1 = new Person("Variable person");
         Person p2 = null;
         p2 = new Person("Regular");
 

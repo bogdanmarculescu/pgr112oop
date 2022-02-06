@@ -1,10 +1,11 @@
 package org.pgr112.ex08;
 
 import org.junit.jupiter.api.Test;
+import org.pgr112.ex08.Shape;
 
 import java.util.HashMap;
 
-public class ShapeTests {
+public abstract class ShapeTests {
 
     @Test
     void newTest(){

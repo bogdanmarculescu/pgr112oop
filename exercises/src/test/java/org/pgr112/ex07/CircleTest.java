@@ -7,7 +7,7 @@ import java.awt.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CircleTest {
+abstract class CircleTest {
 
     @Test
     void createCircleEmptyConstructor() {

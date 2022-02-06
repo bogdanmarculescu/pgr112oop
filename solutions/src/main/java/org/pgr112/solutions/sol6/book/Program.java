@@ -37,28 +37,31 @@ public class Program {
             // what is the value of that input?
             switch (input){
                 // if the input is 0 - print the menu.
-                case "0" -> {
+                case "0" : {
                     System.out.println("Menu");
                     displayMenu();
+                    break;
                 }
                 // if the input is 1 - show an overview of all the books
-                case "1" -> {
+                case "1" : {
                     System.out.println("Overview of all books");
                     for(Book b : register.allRegisteredBooks()){ // for every book
                         System.out.println(b.toString());       // print to console
                     }
+                    break;
                 }
                 // if the input is 2 - add a book
-                case "2" -> {
+                case "2" : {
                     System.out.println("Add a book");
                     // create a new book object - use the method new book (and pass the input scanner as a parameter to it).
                     Book newBook = newBook(inputs); // this is so that no additional scanner is created.
                     register.addBook(newBook);      // add the newly created book to the register
                     System.out.println("Added");    // inform the user the book was added
                     System.out.println(newBook.toString()); // show the added book (also for informing the user).
+                    break;
                 }
                 // if the input is 3 - modify a book
-                case "3" -> {
+                case "3" : {
                     System.out.println("Which book do you want to modify (by ISBN):");
                     String isbn = inputs.nextLine(); // read the ISBN of the book to be modified
                     Book book = register.bookByISBN(isbn); // find the book with that ISBN in the register
@@ -66,52 +69,59 @@ public class Program {
                     modifyBook(book, inputs);   // modify the book (pass the book to be modified and the scanner as parameters).
                     System.out.println("Modified."); // inform the user.
                     System.out.println(book.toString());
+                    break;
                 }
                 // if the input is 4 - find all books based on a genre selected by the user.
-                case "4" -> {
+                case "4" : {
                     System.out.println("Find based on Genre:");
                     Genre genre = parseGenre(inputs.nextLine()); // read the genre the user is interested in
 
                     for (Book b : register.booksInGenre(genre)){    // the [booksInGenre] method returns all the books of a given genre (see the BookRegister class for the code).
                         System.out.println(b.toString()); // for each book in the genre, print the info to console.
                     }
+                    break;
                 }
                 // when the input is 5 - find all books with a given author
-                case "5" -> {
+                case "5" : {
                     System.out.println("Find based on Author:");
                     String author = inputs.nextLine(); // read the author the user is interested in
 
                     for (Book b : register.booksByAuthor(author)){ // the method [booksByAuthor] returns all the books with that author
                         System.out.println(b.toString());   // for each such book, print to console.
                     }
+                    break;
                 }
                 // if the input is 6 - find a book based on ISBN (remember the ISBN is unique)
-                case "6" -> {
+                case "6" : {
                     System.out.println("Find based on ISBN:");
                     String isbn = inputs.nextLine(); // read the desired ISBN from console
 
                     Book b = register.bookByISBN(isbn); // find the appropriate book (if it exists)
                     if(b!=null) System.out.println(b.toString());   // if the book exists, print
                     else System.out.println("No such book found");  // if it does not, inform the user.
+                    break;
                 }
                 // if the input is 7 - remove a book based on ISBN
-                case "7" -> {
+                case "7" : {
                     System.out.println("Remove by ISBN:");
                     String isbn = inputs.nextLine();    // read the ISBN to be removed
                     register.removeBookByISBN(isbn);    // call the appropriate method in the BookRegister
                     System.out.println("Removed!");     // inform the user.
+                    break;
                 }
                 // if the input is 8 - clean up and exit
-                case "8" -> {
+                case "8" : {
                     System.out.println("Exiting"); // inform the user
                     writeBooksDefault();            // write the changes to file
+                    break;
                 } // remember the actual exiting is done by breaking out of the while loop!
                 // what if the input is not something we recognize?
-                default -> { // if the input is unknown, I would rather not crash to whole program
+                default : { // if the input is unknown, I would rather not crash to whole program
                     System.out.println("What on Earth are you on about?"); // inform the user
                     System.out.println("Just type \"0\" to see what I can actually do.");   // provide some guidance
                     //input = "0";
                     //displayMenu();
+                    break;
                 }
             }
         }
@@ -300,12 +310,15 @@ public class Program {
      * @return - returns the appropriate Genre matching the string. Returns [Genre.OTHER] for any string that does not match any other value.
      */
     public Genre parseGenre(String s){
-        return switch (s) {
-            case "CRIME" -> Genre.CRIME;
-            case "FANTASY" -> Genre.FANTASY;
-            case "CLASSIC" -> Genre.CLASSIC;
-            case "SCIFI" -> Genre.SCIFI;
-            default -> Genre.OTHER;
-        };
+
+        Genre ret;
+        switch (s) {
+            case "CRIME" : ret = Genre.CRIME;
+            case "FANTASY" : ret = Genre.FANTASY;
+            case "CLASSIC"  : ret =  Genre.CLASSIC;
+            case "SCIFI"  : ret =  Genre.SCIFI;
+            default  : ret =  Genre.OTHER;
+        }
+        return ret;
     }
 }

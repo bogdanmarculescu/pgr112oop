@@ -68,11 +68,11 @@ public class AssignmentSolution {
      */
     public void printCourseName(String courseCode){
         switch (courseCode){
-            case "PGR103" -> System.out.println("Objektorientert programmering");
-            case "PGR112" -> System.out.println("Object Oriented Programming"); // :D
-            case "DB1102" -> System.out.println("Database");
-            case "TK2100" -> System.out.println("Informasjonssikkerhet");
-            default -> System.out.println("Unknown");
+            case "PGR103" : System.out.println("Objektorientert programmering"); break;
+            case "PGR112" : System.out.println("Object Oriented Programming"); break; // :D
+            case "DB1102" : System.out.println("Database"); break;
+            case "TK2100" : System.out.println("Informasjonssikkerhet"); break;
+            default : System.out.println("Unknown"); break;
         }
     }
 

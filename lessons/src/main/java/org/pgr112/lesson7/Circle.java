@@ -3,33 +3,40 @@ package org.pgr112.lesson7;
 import java.awt.*;
 
 public class Circle extends AbstractShape{
+    protected double radius;
     public Circle(double v) {
         super();
+        this.radius = v;
+        this.isFilled = true;
+        this.color = Color.RED;
     }
 
     public Circle() {
-
+        super();
+        this.radius = 1.0;
+        this.isFilled = true;
+        this.color = Color.RED;
     }
 
     @Override
     public boolean isFilled() {
-        return false;
+        return isFilled;
     }
 
     @Override
     public Color getColor() {
-        return null;
+        return color;
     }
 
     public double getRadius(){
-        return 0.0;
+        return radius;
     }
 
     public double getPerimeter(){
-        return 0.0;
+        return 2* Math.PI * radius;
     }
 
     public double getArea(){
-        return 0.0;
+        return Math.PI * radius * radius;
     }
 }

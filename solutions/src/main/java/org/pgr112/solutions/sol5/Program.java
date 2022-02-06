@@ -243,16 +243,18 @@ public class Program {
 
         while(!choice.equalsIgnoreCase("5")){
             switch (choice){
-                case "0" -> {
+                case "0" : {
                     pr.printMenu();
+                    break;
                 }
-                case "1" -> {
+                case "1" : {
                     System.out.println("Display all");
                     for(Artist ar : pr.getArtists()){
                         ar.printData();
                     }
+                    break;
                 }
-                case "2" -> {
+                case "2" : {
                     System.out.println("Get from ID: ");
                     try{
                         int id = userInput.nextInt();
@@ -269,8 +271,9 @@ public class Program {
                         System.out.println("What exactly are you doing???");
                         ex.printStackTrace();
                     }
+                    break;
                 }
-                case "3" -> {
+                case "3" : {
                     System.out.println("Add artist");
 
                     Artist a = pr.createArtist(userInput);
@@ -278,8 +281,9 @@ public class Program {
 
                     System.out.println("Added!");
                     pr.printMenu();
+                    break;
                 }
-                case "4" -> {
+                case "4" : {
                     System.out.println("Modify artist. Choose ID:");
 
                     try{
@@ -301,10 +305,12 @@ public class Program {
                         ex.printStackTrace();
                         System.out.println("Troubling, that.");
                     }
+                    break;
                 }
-                default -> {
+                default : {
                     System.out.println("I'm afraid I can't do that, Dave.");
                     pr.printMenu();
+                    break;
                 }
             }
             System.out.println("Press 0 for menu.");

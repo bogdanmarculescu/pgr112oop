@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <version.java>14</version.java>
+        <version.java>11</version.java>
         <version.junit.jupiter>5.4.2</version.junit.jupiter>
     </properties>
 
@@ -43,6 +43,11 @@
                 <artifactId>junit-jupiter-params</artifactId>
                 <version>${version.junit.jupiter}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>6.0.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

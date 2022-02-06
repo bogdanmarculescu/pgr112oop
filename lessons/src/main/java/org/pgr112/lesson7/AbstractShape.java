@@ -4,10 +4,18 @@ import java.awt.*;
 
 public abstract class AbstractShape {
 
-    private boolean isFilled;
+    protected boolean isFilled = true;
     protected Color color;
 
     public abstract boolean isFilled();
 
     public abstract Color getColor();
+
+    public void setFilled(boolean filled) {
+        isFilled = filled;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 }

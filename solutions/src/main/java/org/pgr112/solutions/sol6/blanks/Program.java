@@ -153,26 +153,30 @@ public class Program {
         while(!choice.equalsIgnoreCase("3")){
             choice = userInput.nextLine();
             switch (choice){
-                case "0" -> {
+                case "0" : {
                     System.out.println("Menu");
                     printMenu();
+                    break;
                 }
-                case "1" -> {
+                case "1" : {
                     System.out.println("Auto");
                     autoStory();
                     printMenu();
+                    break;
                 }
-                case "2" -> {
+                case "2" : {
                     System.out.println("Personalized. Enter adjectives. Type \"exit\" to stop the list.");
                     System.out.println("Note, right now I have " + adjectives.size() + " adjectives. Try to do better!");
                     this.adjectives = addAdjectives(userInput);
                     story();
                     printMenu();
+                    break;
                 }
-                case "3" -> System.out.println("Exiting");
-                default -> {
+                case "3" : System.out.println("Exiting"); break;
+                default : {
                     System.out.println("Dunno that one, guv.");
                     printMenu();
+                    break;
                 }
             }
         }

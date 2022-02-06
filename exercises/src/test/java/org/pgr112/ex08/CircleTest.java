@@ -1,12 +1,13 @@
 package org.pgr112.ex08;
 
 import org.junit.jupiter.api.Test;
+import org.pgr112.ex08.Circle;
 
 import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CircleTest {
+public abstract class CircleTest {
 
     @Test
     public void testCircle1(){

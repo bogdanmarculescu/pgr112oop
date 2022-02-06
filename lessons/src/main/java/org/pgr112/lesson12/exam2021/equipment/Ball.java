@@ -32,22 +32,11 @@ public abstract class Ball extends Equipment{
     public static Ball chooseAppropriateBall(int id, String type){
         String typeNoCase = type.toLowerCase();
         switch (typeNoCase){
-            case "football" -> {
-                return new FootBall(id);
-            }
-            case "volleyball" -> {
-                return new VolleyBall(id);
-            }
-            case "handball" -> {
-                return new HandBall(id);
-            }
-            case "basketball" -> {
-                return new BasketBall(id);
-            }
-            default -> {
-                //return null;
-                throw new IllegalArgumentException("I do not support type: " + type);
-            }
+            case "football" : return new FootBall(id);
+            case "volleyball" : return new VolleyBall(id);
+            case "handball" : return new HandBall(id);
+            case "basketball" : return new BasketBall(id);
+            default : throw new IllegalArgumentException("I do not support type: " + type);
         }
     }
 

@@ -6,7 +6,7 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SquareTest {
+abstract class SquareTest {
 
     @Test
     void createSquareEmptyConstructor() {

@@ -150,18 +150,10 @@ public class ShapeTests {
         // Remember, this gives us a random int, from 0 (inclusive) to the int (exclusive)
         int choice = rand.nextInt(4);
         switch (choice){
-            case 0 -> {
-                return new Circle();
-            }
-            case 1 -> {
-                return new Rectangle();
-            }
-            case 2 -> {
-                return new Square();
-            }
-            case 3 -> {
-                return new EquilateralTriangle();
-            }
+            case 0 : return new Circle();
+            case 1 : return new Rectangle();
+            case 2 : return new Square();
+            case 3 : return new EquilateralTriangle();
         }
         // this SHOULD be unreachable, i.e. the method should return before this
         // But just in case:

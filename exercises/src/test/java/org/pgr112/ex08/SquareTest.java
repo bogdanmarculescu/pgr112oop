@@ -1,13 +1,14 @@
 package org.pgr112.ex08;
 
 import org.junit.jupiter.api.Test;
+import org.pgr112.ex08.Square;
 
 import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SquareTest {
+public abstract class SquareTest {
 
     @Test
     public void testSquare1(){

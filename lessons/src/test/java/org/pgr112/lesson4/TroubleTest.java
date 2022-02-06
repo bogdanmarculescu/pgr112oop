@@ -17,13 +17,13 @@ public class TroubleTest {
     }
 
     @Test
-    public void troubleTesterBasic(){
+    public void troubleTesterBasic2(){
         Trouble tr = new Trouble();
-        int input = 0;
+        int input = 10;
 
         int result = tr.sumNaturalNumbers(input);
 
-        assertEquals(10, result);
+        assertEquals(45, result);
     }
 
 }

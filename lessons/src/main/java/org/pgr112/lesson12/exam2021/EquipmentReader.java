@@ -37,7 +37,7 @@ public class EquipmentReader {
             while(fileInput.hasNextLine()){
                 String type = fileInput.nextLine();
                 switch (type){
-                    case "Ball" -> {
+                    case "Ball" : {
                         // Read 5 more lines - 6 lines in total
                         String sId = fileInput.nextLine(); // 4 lines left
                         int iId = Integer.parseInt(sId);
@@ -64,8 +64,9 @@ public class EquipmentReader {
                         b1.setHasAir(bAir);
 
                         result.put(iId, b1);
+                        break;
                     }
-                    case "TableTennisRacket" -> {
+                    case "TableTennisRacket" : {
                         // Read 4 more lines - 5 lines in total
                         String sId = fileInput.nextLine(); // 3 lines left
                         int iId = Integer.parseInt(sId);
@@ -84,10 +85,12 @@ public class EquipmentReader {
                         ttr.setNewFace(bNewFace);
 
                         result.put(iId, ttr);
+                        break;
                     }
-                    default -> {
+                    default : {
                         // Panic!
                         // maybe throw exception
+                        break;
                     }
                 }
             }

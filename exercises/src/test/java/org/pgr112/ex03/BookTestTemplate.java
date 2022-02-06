@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BookTest {
+public abstract class BookTestTemplate {
 
     @Test
     public void testConstructor1(){
