@@ -40,6 +40,12 @@ public class Ball extends Equipment {
         this.type = type;
     }
 
+    /***
+     *
+     * @return one of the types randomly
+     *
+     * THis is only used for data generation, to make it easier for me to test.
+     */
     public static String getRandomType(){
         String[] options = {"Handball", "Volleyball", "Football", "Basketball"};
         Random random = new Random();
