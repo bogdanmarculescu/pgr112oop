@@ -5,7 +5,6 @@ import org.pgr112.lesson13.equipment.Locker;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class JDBCIntro {
     public static void main(String[] args) {

@@ -37,7 +37,9 @@ public class JDBCOps {
 
     public boolean insertBall(Ball ball){
         try (Connection con = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "adminroot")) {
+                .getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false",
+                        "root",
+                        "adminroot")) {
 
             Statement stmt = con.createStatement();
             int needsAir = (ball.needsAir()) ? 1 : 0;
