@@ -98,7 +98,7 @@ public class JDBCOps {
                 Locker l1 = new Locker();
                 l1.setId(resultSet.getInt("id"));
                 l1.setLocation(resultSet.getString("location"));
-                 return l1;
+                return l1;
             }
         }
         catch (SQLException sqlException){
@@ -138,14 +138,11 @@ public class JDBCOps {
 
     public ArrayList<Ball> getAllBalls(){
         ArrayList<Ball> results = new ArrayList<>();
-
         try (Connection con = DriverManager
                 .getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "adminroot")) {
-
             Statement stmt = con.createStatement();
 
             String selectSql = "SELECT * FROM equipmentBall";
-
             ResultSet resultSet = stmt.executeQuery(selectSql);
             while (resultSet.next()){
                 System.out.println(resultSet.getString("location"));

@@ -31,7 +31,8 @@ public class JDBCIntro {
         for (int i = 0; i < 10; i++){
             Locker lock = new Locker();
             lock.setLocation("Locker " + i);
-            ops.insertLocker(lock);
+            boolean result = ops.insertLocker(lock);
+            if(result) System.out.println("successfully inserted :" + lock.getLocation());
         }
     }
 
@@ -50,7 +51,7 @@ public class JDBCIntro {
         }
     }
 
-    public static void dbGames(String[] args) throws ClassNotFoundException {
+    public static void dbGames(String[] args) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         }
