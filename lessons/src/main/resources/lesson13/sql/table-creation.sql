@@ -3,6 +3,7 @@ USE equipmentBallsDb;
 CREATE TABLE lockers(
     id INT NOT NULL AUTO_INCREMENT,
     location VARCHAR(45),
+    address VARCHAR(45),
     primary key (id)
 );
 

@@ -1,0 +1,39 @@
+package org.pgr112.lesson14.equipment;
+
+public abstract class Equipment {
+    private int equipId;
+    private Locker location;
+    private boolean replace;
+
+    public Equipment(){
+        this.replace = false;
+    }
+
+    public Equipment(int id){
+        this.equipId = id;
+    }
+
+    public int getEquipId() {
+        return equipId;
+    }
+
+    public void setEquipId(int equipId) {
+        this.equipId = equipId;
+    }
+
+    public Locker getLocation() {
+        return location;
+    }
+
+    public void setLocation(Locker location) {
+        this.location = location;
+    }
+
+    public boolean isReplace() {
+        return replace;
+    }
+
+    public void setReplace(boolean replace) {
+        this.replace = replace;
+    }
+}
