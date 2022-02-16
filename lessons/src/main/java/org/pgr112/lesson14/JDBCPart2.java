@@ -14,11 +14,16 @@ public class JDBCPart2 {
 
 class TransactionRollback{
     public static void main(String[] args) {
+
+        //JDBCOps operations = new JDBCOps();
+        //TrickyInjection.init(operations);
+
         TransactionRollback trb = new TransactionRollback();
 
         trb.buyNewBallInNewLocker();
         trb.buyNewBallInExistingLocker();
     }
+
     public void buyNewBallInExistingLocker(){
         Locker l1 = JDBCOps.getLocker(2);
 
@@ -77,6 +82,7 @@ class TransactionRollback{
             int result = stmt.executeUpdate(insertBall);
 
             if(ball.getLocation().getId() == -1){
+                // well, coach can't just build lockers.
                 con.rollback();
             }
             else{
@@ -131,7 +137,7 @@ class TrickyInjection{
         Locker success = operations.updateAddressByLocation(trickyLocker);
     }
 
-    private static void init(JDBCOps ops){
+    public static void init(JDBCOps ops){
         generateAndInsertLockers(ops);
         ArrayList<Locker> lockers = ops.getAllLockers();
         generateAndInsertBalls(ops, lockers);

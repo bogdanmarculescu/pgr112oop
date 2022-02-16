@@ -63,7 +63,7 @@ public class ExampleUsingPreparedStatements {
                 b.setNeedsAir(rs.getBoolean("needsAir"));
                 b.setEquipId(rs.getInt("id"));
                 Locker l = new Locker();
-                l.setId(rs.getInt("id"));
+                l.setId(rs.getInt("location"));
                 b.setLocation(l);
 
                 result.add(b);
@@ -94,7 +94,7 @@ public class ExampleUsingPreparedStatements {
                 l1.setLocation(resultSet.getString("location"));
                 result.add(l1);
             }
-
+            con.commit();
 
         }
         catch(SQLException sqlException){
@@ -105,15 +105,15 @@ public class ExampleUsingPreparedStatements {
 
 
     public void deflateInLockers(ArrayList<Integer> lockers){
-        String preparedSelect = "UPDATE equipmentBall SET needsAir = ? WHERE location = ?";
+        String preparedUpdate = "UPDATE equipmentBall SET needsAir = ? WHERE location = ?";
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "adminroot");
             con.setAutoCommit(false);
 
-            for(Integer locker : lockers){
-                PreparedStatement statement = con.prepareStatement(preparedSelect);
+            for(Integer lockerId : lockers){
+                PreparedStatement statement = con.prepareStatement(preparedUpdate);
                 statement.setInt(1, 1);
-                statement.setInt(2, locker);
+                statement.setInt(2, lockerId);
 
                 statement.executeUpdate();
                 con.commit();
