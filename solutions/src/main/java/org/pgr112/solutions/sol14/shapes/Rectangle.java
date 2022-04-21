@@ -1,6 +1,4 @@
-package org.pgr112.solutions.sol13.shapes;
-
-import java.awt.Color;
+package org.pgr112.solutions.sol14.shapes;
 
 public class Rectangle extends Shape {
 
@@ -22,7 +20,7 @@ public class Rectangle extends Shape {
     }
 
     public Rectangle(double width, double length, String color, boolean filled,
-              MovablePoint topLeft, MovablePoint bottomRight) {
+                     MovablePoint topLeft, MovablePoint bottomRight) {
 
         super(color, filled);
         this.width = width;
