@@ -62,7 +62,7 @@ public class CircleDao extends ShapeDao<Circle> {
                 centerP = circle.getCenter();
             }
 
-            PreparedStatement stmt = connection.prepareStatement(preparedSave);
+            PreparedStatement stmt = connection.prepareStatement(preparedSave, PreparedStatement.RETURN_GENERATED_KEYS);
 
             stmt.setBoolean(1, circle.isFilled());
             stmt.setString(2, circle.getColor());
@@ -71,9 +71,10 @@ public class CircleDao extends ShapeDao<Circle> {
 
             stmt.executeUpdate();
 
+            connection.commit();
             ResultSet rs = stmt.getGeneratedKeys();
             if(rs.next()){
-                circle.setId(rs.getInt("id"));
+                circle.setId(rs.getInt(1));
             }
 
         }

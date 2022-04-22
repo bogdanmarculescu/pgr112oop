@@ -61,6 +61,7 @@ public class MoveablePointDao extends ShapeDao<MovablePoint> {
             stmt.setDouble(3, mp.getY());
 
             stmt.executeUpdate();
+            connection.commit();
         }
         catch (SQLException sqlException){
             sqlException.printStackTrace();

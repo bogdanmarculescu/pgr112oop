@@ -23,10 +23,26 @@ public class RectangleDao extends ShapeDao<Rectangle> {
 
         try (Connection connection = getConnection()){
             connection.setAutoCommit(false);
-            PreparedStatement stmt = connection.prepareStatement(preparedInsert);
+            PreparedStatement stmt = connection.prepareStatement(preparedInsert, PreparedStatement.RETURN_GENERATED_KEYS);
 
             stmt.setBoolean(1, rectangle.isFilled());
             stmt.setString(2, rectangle.getColor());
+
+            MovablePoint topLeft;
+            MovablePoint bottomRight;
+            MoveablePointDao mpd = new MoveablePointDao();
+
+            topLeft = mpd.retrieve(rectangle.getTopLeft().getId());
+            bottomRight = mpd.retrieve(rectangle.getBottomRight().getId());
+
+            if(topLeft==null){
+                mpd.save(rectangle.getTopLeft());
+                topLeft = rectangle.getTopLeft();
+            }
+            if(bottomRight==null){
+                mpd.save(rectangle.getBottomRight());
+                bottomRight = rectangle.getBottomRight();
+            }
 
             stmt.setDouble(3, rectangle.getWidth());
             stmt.setDouble(4, rectangle.getLength());
@@ -34,9 +50,12 @@ public class RectangleDao extends ShapeDao<Rectangle> {
             stmt.setInt(5, rectangle.getTopLeft().getId());
             stmt.setInt(6, rectangle.getBottomRight().getId());
 
+            stmt.executeUpdate();
+            connection.commit();
+
             ResultSet rs = stmt.getGeneratedKeys();
             if(rs.next()){
-                rectangle.setId(rs.getInt("id"));
+                rectangle.setId(rs.getInt(1));
             }
         }
         catch (SQLException sqlException){
