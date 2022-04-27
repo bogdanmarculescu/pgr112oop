@@ -1,13 +1,10 @@
 package org.pgr112.solutions.sol13.dtos;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
 import org.pgr112.solutions.sol13.shapes.Circle;
 import org.pgr112.solutions.sol13.shapes.MovablePoint;
 
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 public class CircleDao extends ShapeDao<Circle> {
@@ -37,7 +34,7 @@ public class CircleDao extends ShapeDao<Circle> {
         try (Connection connection = getConnection()){
             Statement stmt = connection.createStatement();
 
-            String selectSql = "SELECT * FROM points WHERE id = " + id;
+            String selectSql = "SELECT * FROM circles WHERE id = " + id;
             ResultSet resultSet = stmt.executeQuery(selectSql);
 
             return mapFromResultSet(resultSet);

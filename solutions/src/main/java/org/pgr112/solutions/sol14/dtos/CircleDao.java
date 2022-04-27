@@ -30,7 +30,7 @@ public class CircleDao extends ShapeDao<Circle> {
     }
 
     public Circle retrieve(int id) {
-        String preparedSelect = "SELECT * FROM points WHERE id = ?";
+        String preparedSelect = "SELECT * FROM circles WHERE id = ?";
         try (Connection connection = getConnection()){
             PreparedStatement stmt = connection.prepareStatement(preparedSelect);
             stmt.setInt(1, id);
