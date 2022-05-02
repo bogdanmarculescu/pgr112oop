@@ -37,7 +37,14 @@ public class CircleDao extends ShapeDao<Circle> {
             String selectSql = "SELECT * FROM circles WHERE id = " + id;
             ResultSet resultSet = stmt.executeQuery(selectSql);
 
-            return mapFromResultSet(resultSet);
+            if(resultSet.next()){
+                return mapFromResultSet(resultSet);
+            }
+            else{
+                // maybe throw error
+                return null;
+            }
+
 
         }
         catch (SQLException sqlException){
@@ -79,7 +86,7 @@ public class CircleDao extends ShapeDao<Circle> {
 
     @Override
     public ArrayList<Circle> listAll() throws SQLException {
-        ArrayList<Circle> result = new ArrayList<Circle>();
+        ArrayList<Circle> result = new ArrayList<>();
         try (Connection connection = getConnection()){
             Statement stmt = connection.createStatement();
 
