@@ -9,6 +9,8 @@ import org.pgr112.lesson10.animals.Pig;
 import java.util.HashSet;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class AnimalsTest {
     private HashSet<Animal> animals;
 
@@ -77,6 +79,12 @@ public class AnimalsTest {
             throw new IllegalArgumentException("Expecting non-null values. Null found.");
         }
         return s1.length() + s2.length();
+    }
+
+    @Test
+    public void testAnimals(){
+        assertEquals(5, animals.size());
+
     }
 
 }

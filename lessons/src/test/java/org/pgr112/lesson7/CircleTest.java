@@ -9,9 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CircleTest {
 
+    private Circle circle;
+
     @Test
     void createCircleEmptyConstructor() {
-        Circle circle = new Circle();
+        circle = new Circle();
         assertTrue(circle.isFilled());
         assertEquals(circle.getRadius(), 1.0);
         assertEquals(Color.RED, circle.getColor());
@@ -21,7 +23,7 @@ class CircleTest {
     void createCircleRadiusConstructor() {
         Circle circle = new Circle(2.0);
         assertTrue(circle.isFilled());
-        assertEquals(circle.getRadius(), 2.0);
+        assertEquals(2.0, circle.getRadius());
         assertEquals(Color.RED, circle.getColor());
     }
     @Test
